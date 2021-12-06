@@ -27,13 +27,14 @@ else
   ./convert_dipha.py -i ${input_path}dipha.edges -o ${input_path}dipha_edges.txt
 
   # (4). Reconstruct DMT
-  for i in `seq 0 10 100`; do
-    $dmt_path ${input_path}vert.txt ${input_path}dipha_edges.txt $i $output_path
-    python visualize.py ${output_path}dimo_vert.txt ${fig_name}_${i}.tiff
-  done
-  #$dmt_path ${input_path}vert.txt ${input_path}dipha_edges.txt $ph_thld $output_path
+  #for i in `seq 0 10 100`; do
+  #  $dmt_path ${input_path}vert.txt ${input_path}dipha_edges.txt $i $output_path
+  #  python visualize.py ${output_path}dimo_vert.txt ${fig_name}_${i}.tiff
+  #done
+  
+  $dmt_path ${input_path}vert.txt ${input_path}dipha_edges.txt $ph_thld $output_path
 
   # (5). Visualize
-  #python visualize.py ${output_path}dimo_vert.txt $fig_name
+  python visualize.py ${output_path}dimo_vert.txt $fig_name
 
 fi
