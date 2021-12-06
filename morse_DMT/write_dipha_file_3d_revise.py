@@ -7,15 +7,17 @@ DIPHA_CONST = 8067171840
 DIPHA_IMAGE_TYPE_CONST = 1
 DIM = 3
 
-input_dir = sys.argv[1]
+input_dir = os.path.join(os.getcwd(), sys.argv[1])
 dipha_output_filename = sys.argv[2]
 vert_filename = sys.argv[3]
 
-input_filenames = [name for name in os.listdir(input_dir) if (os.path.isfile(input_dir + '/' + name)) and (name != ".DS_Store")]
+input_filenames = [name
+                   for name in os.listdir(input_dir)
+                   if (os.path.isfile(input_dir + '/' + name)) and (name != ".DS_Store")]
 input_filenames.sort()
 
 
-image = mpimg.imread(input_dir + input_filenames[0])
+image = mpimg.imread(os.path.join(input_dir, input_filenames[0]))
 nx, ny = image.shape
 del image
 nz = len(input_filenames)
