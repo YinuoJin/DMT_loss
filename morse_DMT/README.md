@@ -1,3 +1,15 @@
+### Automated script
+
+`run_dmt.sh` runs through all steps from the input likelihood map $f$ to the reconstructed discrete morse complex. Please find the arguments by running `./run_dmt.sh -h`. An example command is provided with the given `data_2d/` input image:
+```bash
+
+#arguments: [njobs], [data_path], [input_path], [output_path], [dim (l, w, h)], [persistence_threshold] [mask_name]
+./run_dmt.sh 4 data_2d/ inputs/ output/ 200 200 1 0 mask
+```
+
+
+---
+
 ### Step 1 - generate dipha file
 
 write_dipha_file_3d.py
